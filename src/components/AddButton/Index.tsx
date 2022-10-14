@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { addTodo, fecthTodos } from '../../actions/todoActions';
+import { addTodo } from '../../actions/todoActions';
 import { AppContext } from '../../context/appContext';
-import { SaveTodo } from '../../services/todoService';
+import { saveTodo } from '../../services/todoService';
 import { Button } from './styles';
 
 const AddButton = () => {
@@ -11,7 +11,7 @@ const AddButton = () => {
       isEnable={state.buttonEnable}
       disabled={state.buttonEnable}
       onClick={async () => {
-        var response = await SaveTodo(state.todoTitle);
+        var response = await saveTodo(state.todoTitle);
         addTodo(dispatch, response);
       }}
     >

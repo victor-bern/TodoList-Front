@@ -5,6 +5,7 @@ type TodoListProps = {
   todos: ITodo[];
 };
 const TodoList: React.FC<TodoListProps> = ({ todos }) => {
+  todos.sort((a, b) => a.id! - b.id!);
   return (
     <>
       {todos.map((item) => {

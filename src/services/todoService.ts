@@ -7,11 +7,15 @@ const getAllTodos = async () => {
   return response.data;
 };
 
-const SaveTodo = async (title: string) => {
+const saveTodo = async (title: string) => {
   const response = await axios.post<ITodo>('api/v1/todos', {
     title,
   });
   return response.data;
 };
 
-export { getAllTodos, SaveTodo };
+const changeStatustodo = async (id: number) => {
+  await axios.put(`api/v1/todos/status/${id}`);
+};
+
+export { getAllTodos, saveTodo, changeStatustodo };
