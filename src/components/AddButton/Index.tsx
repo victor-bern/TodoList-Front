@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { addTodo } from '../../actions/todoActions';
 import { AppContext } from '../../context/appContext';
 import { Button } from './styles';
