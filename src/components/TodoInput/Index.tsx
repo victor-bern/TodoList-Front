@@ -8,7 +8,7 @@ const TodoInput: React.FC = () => {
   return (
     <Container>
       <Input
-        defaultValue={state.todoTitle}
+        value={state.todoTitle}
         onChange={(e) => {
           setTodoTitle(dispatch, e.currentTarget.value);
           ButtonDisableOrEnable(dispatch);

@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { addTodo } from '../../actions/todoActions';
+import { addTodo, cleanTodoInput } from '../../actions/todoActions';
 import { AppContext } from '../../context/appContext';
 import { saveTodo } from '../../services/todoService';
 import { Button } from './styles';
@@ -13,6 +13,7 @@ const AddButton = () => {
       onClick={async () => {
         var response = await saveTodo(state.todoTitle);
         addTodo(dispatch, response);
+        cleanTodoInput(dispatch);
       }}
     >
       Add

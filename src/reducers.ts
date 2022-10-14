@@ -24,6 +24,11 @@ const todoReducer = (state: IAppState, action: IAction): typeof state => {
         ...state,
         todos: [...(action.todos as ITodo[])],
       };
+    case 'CLEAN_TODO_INPUT':
+      return {
+        ...state,
+        todoTitle: '',
+      };
     default:
       throw new Error();
   }

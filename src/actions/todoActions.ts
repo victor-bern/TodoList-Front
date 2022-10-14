@@ -15,4 +15,13 @@ const ButtonDisableOrEnable = (dispatch: Dispatch<IAction>) =>
 const fecthTodos = (dispatch: Dispatch<IAction>, todos: ITodo[]) =>
   dispatch({ type: ActionType.FETCH_TODOS, todos });
 
-export { setTodoTitle, addTodo, ButtonDisableOrEnable, fecthTodos };
+const cleanTodoInput = (dispatch: Dispatch<IAction>) =>
+  dispatch({ type: ActionType.CLEAN_TODO_INPUT });
+
+export {
+  setTodoTitle,
+  addTodo,
+  ButtonDisableOrEnable,
+  fecthTodos,
+  cleanTodoInput,
+};
