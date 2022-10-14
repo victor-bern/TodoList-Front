@@ -10,16 +10,11 @@ const todoReducer = (state: IAppState, action: IAction): typeof state => {
         todoTitle: action.todoTitle as string,
       };
     case 'ADD_TODO':
-      console.log(state.todos);
       return {
         ...state,
-        todos: [
-          ...state.todos,
-          { id: 1, title: state.todoTitle, isDone: false },
-        ],
+        todos: [...state.todos, action.todo as ITodo],
       };
     case 'VERIFY_BUTTON':
-      console.log(state);
       return {
         ...state,
         buttonEnable: state.todoTitle.length > 0 ? false : true,

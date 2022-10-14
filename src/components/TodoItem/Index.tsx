@@ -8,7 +8,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
   return (
     <Container>
       <TodoTitle>{todo.title}</TodoTitle>
-      <CheckBox type='checkbox' checked={todo.isDone} />
+      <CheckBox type='checkbox' defaultChecked={todo.isDone} />
     </Container>
   );
 };

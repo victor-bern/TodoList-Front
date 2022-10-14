@@ -4,10 +4,11 @@ import { AppContext } from '../../context/appContext';
 import { Container, Input } from './styles';
 
 const TodoInput: React.FC = () => {
-  const { dispatch } = useContext(AppContext);
+  const { dispatch, state } = useContext(AppContext);
   return (
     <Container>
       <Input
+        defaultValue={state.todoTitle}
         onChange={(e) => {
           setTodoTitle(dispatch, e.currentTarget.value);
           ButtonDisableOrEnable(dispatch);
