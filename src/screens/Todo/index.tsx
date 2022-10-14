@@ -7,7 +7,7 @@ import { Container, InputContainer } from './styles';
 function Todo() {
   var list: ITodo[] = [
     { id: 1, title: 'Titulo', isDone: false },
-    { id: 2, title: 'Titulo2', isDone: false },
+    { id: 2, title: 'Titulo2', isDone: true },
   ];
   return (
     <Container>
