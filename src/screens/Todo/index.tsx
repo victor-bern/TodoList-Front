@@ -1,14 +1,21 @@
-import React from 'react';
+import { useContext, useEffect } from 'react';
+import { fecthTodos } from '../../actions/todoActions';
 import AddButton from '../../components/AddButton/Index';
 import TodoInput from '../../components/TodoInput/Index';
 import TodoList from '../../components/TodoList';
-import { ITodo } from '../../types/ITodo';
+import { AppContext } from '../../context/appContext';
+import { getAllTodos } from '../../services/todoService';
 import { Container, InputContainer } from './styles';
 function Todo() {
-  var list: ITodo[] = [
-    { id: 1, title: 'Titulo', isDone: false },
-    { id: 2, title: 'Titulo2', isDone: true },
-  ];
+  const { dispatch, state } = useContext(AppContext);
+  useEffect(() => {
+    const fetchItems = async () => {
+      const items = await getAllTodos();
+      fecthTodos(dispatch, items);
+    };
+    fetchItems();
+  }, [dispatch]);
+
   return (
     <Container>
       <h1>Todo</h1>
@@ -17,7 +24,7 @@ function Todo() {
         <AddButton />
       </InputContainer>
 
-      <TodoList todos={list} />
+      <TodoList todos={state.todos} />
     </Container>
   );
 }

@@ -1,5 +1,6 @@
 import { IAppState } from './context/appContext';
 import { IAction } from './types/IAction';
+import { ITodo } from './types/ITodo';
 
 const todoReducer = (state: IAppState, action: IAction): typeof state => {
   switch (action.type) {
@@ -22,6 +23,11 @@ const todoReducer = (state: IAppState, action: IAction): typeof state => {
       return {
         ...state,
         buttonEnable: state.todoTitle.length > 0 ? false : true,
+      };
+    case 'FETCH_TODOS':
+      return {
+        ...state,
+        todos: [...(action.todos as ITodo[])],
       };
     default:
       throw new Error();
