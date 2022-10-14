@@ -8,3 +8,9 @@ export const Container = styled.div`
   align-items: center;
   font-family: 'Roboto', sans-serif;
 `;
+
+export const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;

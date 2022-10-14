@@ -5,11 +5,13 @@ import { ITodo } from '../types/ITodo';
 export interface IAppState {
   todoTitle: string;
   todos: ITodo[];
+  buttonEnable: boolean;
 }
 
 export const initialState: IAppState = {
   todoTitle: '',
   todos: [],
+  buttonEnable: true,
 };
 
 export interface IAppContext {
@@ -21,6 +23,7 @@ const AppContext = React.createContext<IAppContext>({
   state: {
     todos: [],
     todoTitle: '',
+    buttonEnable: true,
   },
   dispatch: () => {},
 });
