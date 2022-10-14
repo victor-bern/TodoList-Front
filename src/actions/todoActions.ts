@@ -9,7 +9,7 @@ const setTodoTitle = (dispatch: Dispatch<IAction>, todoTitle: string) => {
 const addTodo = (dispatch: Dispatch<IAction>, todo: ITodo) =>
   dispatch({ type: ActionType.ADD_TODO, todo });
 
-const ButtonDisableOrEnable = (dispatch: Dispatch<IAction>) =>
+const buttonDisableOrEnable = (dispatch: Dispatch<IAction>) =>
   dispatch({ type: ActionType.VERIFY_BUTTON });
 
 const fecthTodos = (dispatch: Dispatch<IAction>, todos: ITodo[]) =>
@@ -21,7 +21,7 @@ const cleanTodoInput = (dispatch: Dispatch<IAction>) =>
 export {
   setTodoTitle,
   addTodo,
-  ButtonDisableOrEnable,
+  buttonDisableOrEnable,
   fecthTodos,
   cleanTodoInput,
 };

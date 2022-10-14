@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ButtonDisableOrEnable, setTodoTitle } from '../../actions/todoActions';
+import { buttonDisableOrEnable, setTodoTitle } from '../../actions/todoActions';
 import { AppContext } from '../../context/appContext';
 import { Container, Input } from './styles';
 
@@ -11,7 +11,7 @@ const TodoInput: React.FC = () => {
         value={state.todoTitle}
         onChange={(e) => {
           setTodoTitle(dispatch, e.currentTarget.value);
-          ButtonDisableOrEnable(dispatch);
+          buttonDisableOrEnable(dispatch);
         }}
       />
     </Container>

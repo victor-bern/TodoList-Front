@@ -14,3 +14,17 @@ export const InputContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const ListContainer = styled.div`
+  height: 700px;
+  padding: 6px;
+  &::-webkit-scrollbar {
+    width: 8px; /* width of the entire scrollbar */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: blue; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+  }
+  overflow: auto;
+`;

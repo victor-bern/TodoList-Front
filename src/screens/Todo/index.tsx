@@ -5,7 +5,7 @@ import TodoInput from '../../components/TodoInput/Index';
 import TodoList from '../../components/TodoList';
 import { AppContext } from '../../context/appContext';
 import { getAllTodos } from '../../services/todoService';
-import { Container, InputContainer } from './styles';
+import { Container, InputContainer, ListContainer } from './styles';
 function Todo() {
   const { dispatch, state } = useContext(AppContext);
   useEffect(() => {
@@ -23,8 +23,9 @@ function Todo() {
         <TodoInput />
         <AddButton />
       </InputContainer>
-
-      <TodoList todos={state.todos} />
+      <ListContainer>
+        <TodoList todos={state.todos} />
+      </ListContainer>
     </Container>
   );
 }
