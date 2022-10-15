@@ -1,13 +1,7 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
-import MockAdapter from 'axios-mock-adapter';
-import baseConfig from '../../configs/axiosConfig';
+import { render, screen } from '@testing-library/react';
 import { AppContextProvider } from '../../context/appContext';
 import AddButton from './Index';
-import axios from 'axios';
-
-jest.mock('axios');
-const apiMocked = axios as jest.Mocked<typeof axios>;
 
 test('Button should be disabled when load', () => {
   render(
