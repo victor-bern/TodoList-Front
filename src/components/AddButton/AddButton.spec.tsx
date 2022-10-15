@@ -14,7 +14,7 @@ test('Button should be disabled when load', () => {
   expect(button.disabled).toBe(true);
 });
 
-test('Backgroung color of Button should have #808080 when enabled', () => {
+test('Backgroung color of Button should be #808080 when enabled', () => {
   render(
     <AppContextProvider>
       <AddButton />
