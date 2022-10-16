@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import { AppContextProvider } from '../../context/appContext';
 import { ITodo } from '../../types/ITodo';
 import TodoItem from './Index';
