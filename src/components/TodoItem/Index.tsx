@@ -1,7 +1,13 @@
 import { changeStatustodo } from '../../services/todoService';
 import { ITodo } from '../../types/ITodo';
 import { FiCheck } from 'react-icons/fi';
-import { CheckBox, Container, TodoTitle } from './styles';
+import {
+  ActionsContainer,
+  CheckBox,
+  Container,
+  Icon,
+  TodoTitle,
+} from './styles';
 import { useEffect, useState } from 'react';
 
 type TodoItemProps = {
@@ -18,13 +24,19 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
     <Container>
       <TodoTitle>{todo.title}</TodoTitle>
       {isDone ? (
-        <FiCheck role={'img'} />
+        <ActionsContainer>
+          <FiCheck role={'img'} />
+          <Icon role={'img'} />
+        </ActionsContainer>
       ) : (
-        <CheckBox
-          type='checkbox'
-          onChange={onCheckHandler}
-          defaultChecked={todo.isDone}
-        />
+        <ActionsContainer>
+          <CheckBox
+            type='checkbox'
+            onChange={onCheckHandler}
+            defaultChecked={todo.isDone}
+          />
+          <Icon role={'img'} />
+        </ActionsContainer>
       )}
     </Container>
   );

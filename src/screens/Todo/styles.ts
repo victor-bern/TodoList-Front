@@ -17,6 +17,7 @@ export const InputContainer = styled.div`
 
 export const ListContainer = styled.div`
   height: 700px;
+  width: 630px;
   padding: 6px;
   &::-webkit-scrollbar {
     width: 8px; /* width of the entire scrollbar */
