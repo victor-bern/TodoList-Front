@@ -35,7 +35,9 @@ const todoReducer = (state: IAppState, action: IAction): typeof state => {
         todos: [...state.todos.filter((item) => item !== action.todo)],
       };
     default:
-      throw new Error();
+      return {
+        ...state,
+      };
   }
 };
 
