@@ -22,7 +22,6 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
   const onClickDeleteHandler = async (
     event: React.MouseEvent<SVGElement, MouseEvent>
   ) => {
-    console.log('AAA');
     await deleteTodo(todo.id!);
     removeTodo(dispatch, todo);
   };
@@ -37,7 +36,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
       <TodoTitle>{todo.title}</TodoTitle>
       {isDone ? (
         <ActionsContainer>
-          <FiCheck role={'img'} />
+          <FiCheck data-testid='checkIconID' role={'img'} />
           <Icon onClick={onClickDeleteHandler} role={'img'} />
         </ActionsContainer>
       ) : (

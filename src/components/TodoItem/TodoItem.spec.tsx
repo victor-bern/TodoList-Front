@@ -17,9 +17,11 @@ test('Should load values passed by props', () => {
 
   const title = screen.getByText(todoMock.title);
   const checkBox = screen.getByRole('checkbox');
+  const trashIcon = screen.getByRole('img');
 
   expect(title).toBeVisible();
   expect(checkBox).toBeVisible();
+  expect(trashIcon).toBeVisible();
 });
 
 test('icon should to be visible if todo is done', async () => {
@@ -30,7 +32,7 @@ test('icon should to be visible if todo is done', async () => {
     </AppContextProvider>
   );
 
-  const icon = screen.getByRole('img');
+  const icon = screen.getByTestId('checkIconID');
 
   expect(icon).toBeVisible();
 });
