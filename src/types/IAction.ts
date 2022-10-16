@@ -6,6 +6,7 @@ export enum ActionType {
   FETCH_TODOS = 'FETCH_TODOS',
   VERIFY_BUTTON = 'VERIFY_BUTTON',
   CLEAN_TODO_INPUT = 'CLEAN_TODO_INPUT',
+  DELETE_TODO = 'DELETE_TODO',
 }
 
 export type IAction = {
