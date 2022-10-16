@@ -21,11 +21,11 @@ test('Should load values passed by props', () => {
 
   const title = screen.getByText(todoMock.title);
   const checkBox = screen.getByRole('checkbox');
-  const thrashIcon = screen.getByRole('img');
+  const trashIcon = screen.getByRole('img');
 
   expect(title).toBeVisible();
   expect(checkBox).toBeVisible();
-  expect(thrashIcon).toBeVisible();
+  expect(trashIcon).toBeVisible();
 });
 
 test('icon should to be visible if todo is done', async () => {
@@ -42,15 +42,15 @@ test('icon should to be visible if todo is done', async () => {
 });
 
 // O hover não quer funcionar :'(
-test.skip('thrash icon color should be #ff5733 on hover', async () => {
+test.skip('trash icon color should be #ff5733 on hover', async () => {
   render(
     <AppContextProvider>
       <TodoItem todo={todoMock} />
     </AppContextProvider>
   );
 
-  const thrashIcon = screen.getByRole('img');
+  const trashIcon = screen.getByRole('img');
 
-  fireEvent.mouseOver(thrashIcon);
-  expect(thrashIcon).toHaveStyle('color: #ff5733');
+  fireEvent.mouseOver(trashIcon);
+  expect(trashIcon).toHaveStyle('color: #ff5733');
 });
