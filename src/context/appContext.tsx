@@ -1,5 +1,5 @@
 import React, { Dispatch } from 'react';
-import todoReducer from '../reducers';
+import todoReducer from '../reducers/todoReducer';
 import { IAction } from '../types/IAction';
 import { ITodo } from '../types/ITodo';
 export interface IAppState {
@@ -28,11 +28,13 @@ const AppContext = React.createContext<IAppContext>({
   dispatch: () => {},
 });
 
-type Props = {
-  children?: React.ReactNode;
+export type AppContextProviderProps = {
+  children: React.ReactNode;
 };
 
-const AppContextProvider: React.FC<Props> = ({ children }) => {
+const AppContextProvider: React.FC<AppContextProviderProps> = ({
+  children,
+}) => {
   const [state, dispatch] = React.useReducer(
     todoReducer,
     initialState as IAppState

@@ -1,6 +1,6 @@
-import { IAppState } from './context/appContext';
-import { IAction } from './types/IAction';
-import { ITodo } from './types/ITodo';
+import { IAppState } from '../context/appContext';
+import { IAction } from '../types/IAction';
+import { ITodo } from '../types/ITodo';
 
 const todoReducer = (state: IAppState, action: IAction): typeof state => {
   switch (action.type) {
