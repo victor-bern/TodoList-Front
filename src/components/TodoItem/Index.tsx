@@ -18,7 +18,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
     <Container>
       <TodoTitle>{todo.title}</TodoTitle>
       {isDone ? (
-        <FiCheck />
+        <FiCheck role={'img'} />
       ) : (
         <CheckBox
           type='checkbox'
