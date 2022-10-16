@@ -29,6 +29,11 @@ const todoReducer = (state: IAppState, action: IAction): typeof state => {
         ...state,
         todoTitle: '',
       };
+    case 'DELETE_TODO':
+      return {
+        ...state,
+        todos: [...state.todos.filter((item) => item !== action.todo)],
+      };
     default:
       throw new Error();
   }

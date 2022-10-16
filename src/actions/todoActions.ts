@@ -18,7 +18,7 @@ const fecthTodos = (dispatch: Dispatch<IAction>, todos: ITodo[]) =>
 const cleanTodoInput = (dispatch: Dispatch<IAction>) =>
   dispatch({ type: ActionType.CLEAN_TODO_INPUT });
 
-const deleteTodo = (dispatch: Dispatch<IAction>, todo: ITodo) =>
+const removeTodo = (dispatch: Dispatch<IAction>, todo: ITodo) =>
   dispatch({ type: ActionType.DELETE_TODO, todo });
 
 export {
@@ -27,5 +27,5 @@ export {
   buttonDisableOrEnable,
   fecthTodos,
   cleanTodoInput,
-  deleteTodo,
+  removeTodo,
 };

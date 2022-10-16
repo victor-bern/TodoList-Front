@@ -1,4 +1,4 @@
-import { changeStatustodo } from '../../services/todoService';
+import { changeStatustodo, deleteTodo } from '../../services/todoService';
 import { ITodo } from '../../types/ITodo';
 import { FiCheck } from 'react-icons/fi';
 import {
@@ -8,13 +8,25 @@ import {
   Icon,
   TodoTitle,
 } from './styles';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AppContext } from '../../context/appContext';
+import { removeTodo } from '../../actions/todoActions';
 
 type TodoItemProps = {
   todo: ITodo;
 };
 const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
+  const { dispatch } = useContext(AppContext);
   const [isDone, setIsDone] = useState(todo.isDone);
+
+  const onClickDeleteHandler = async (
+    event: React.MouseEvent<SVGElement, MouseEvent>
+  ) => {
+    console.log('AAA');
+    await deleteTodo(todo.id!);
+    removeTodo(dispatch, todo);
+  };
+
   const onCheckHandler = async (e: React.ChangeEvent<HTMLInputElement>) => {
     await changeStatustodo(todo.id!);
     setIsDone(true);
@@ -26,7 +38,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
       {isDone ? (
         <ActionsContainer>
           <FiCheck role={'img'} />
-          <Icon role={'img'} />
+          <Icon onClick={onClickDeleteHandler} role={'img'} />
         </ActionsContainer>
       ) : (
         <ActionsContainer>
@@ -35,7 +47,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
             onChange={onCheckHandler}
             defaultChecked={todo.isDone}
           />
-          <Icon role={'img'} />
+          <Icon onClick={onClickDeleteHandler} role={'img'} />
         </ActionsContainer>
       )}
     </Container>
