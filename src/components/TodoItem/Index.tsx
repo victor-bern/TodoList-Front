@@ -74,13 +74,19 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
       )}
       {isDone ? (
         <ActionsContainer>
-          <FiEdit onClick={handleClickButtonStartEdit} />
+          <FiEdit
+            data-testid='editIconID'
+            onClick={handleClickButtonStartEdit}
+          />
           <FiCheck data-testid='checkIconID' role={'img'} />
           <Icon onClick={onClickDeleteHandler} role={'img'} />
         </ActionsContainer>
       ) : (
         <ActionsContainer>
-          <FiEdit onClick={handleClickButtonStartEdit} />
+          <FiEdit
+            data-testid='editIconID'
+            onClick={handleClickButtonStartEdit}
+          />
           <CheckBox
             type='checkbox'
             onChange={onCheckHandler}

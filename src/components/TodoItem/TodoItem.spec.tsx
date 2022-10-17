@@ -41,6 +41,22 @@ test('icon should to be visible if todo is done', async () => {
   expect(icon).toBeVisible();
 });
 
+test('should render input when click on edit button', () => {
+  render(
+    <AppContextProvider>
+      <TodoItem todo={todoMock} />
+    </AppContextProvider>
+  );
+
+  const editIcon = screen.getByTestId('editIconID');
+
+  fireEvent.click(editIcon);
+
+  const input = screen.getByRole('textbox');
+
+  expect(input).toBeVisible();
+});
+
 // O hover não quer funcionar :'(
 test.skip('trash icon color should be #ff5733 on hover', async () => {
   render(
