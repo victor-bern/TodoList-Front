@@ -91,6 +91,33 @@ describe('TodoReducer', () => {
     expect(todoReducer(initialState, action)).toEqual(expectedResult);
   });
 
+  it('Should edit todo title', () => {
+    var todo: ITodo = {
+      id: 1,
+      title: 'Teste',
+      isDone: false,
+    };
+    const initialState: IAppState = {
+      buttonEnable: false,
+      todos: [todo],
+      todoTitle: 'Title',
+    };
+
+    var todoEdited = { ...todo, title: 'TesteEditado' };
+
+    const action: IAction = {
+      type: ActionType.EDIT_TODO_TITLE,
+      todo: todoEdited,
+    };
+
+    const expectedResult: IAppState = {
+      ...initialState,
+      todos: [todoEdited],
+    };
+
+    expect(todoReducer(initialState, action)).toEqual(expectedResult);
+  });
+
   it('Verify button should change button enable status to false when todo title is not empty', () => {
     const initialState: IAppState = {
       buttonEnable: false,
