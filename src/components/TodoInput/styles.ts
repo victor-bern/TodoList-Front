@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const Input = styled.input`
   padding: 16px;
-  width: 100%;
+  width: 300px;
   border: 1px solid black;
   border-radius: 16px;
 `;

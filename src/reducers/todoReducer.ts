@@ -34,6 +34,16 @@ const todoReducer = (state: IAppState, action: IAction): typeof state => {
         ...state,
         todos: [...state.todos.filter((item) => item !== action.todo)],
       };
+    case 'EDIT_TODO_TITLE':
+      var indexOf = state.todos.findIndex(
+        (item) => item.id === action.todo?.id
+      );
+      state.todos[indexOf].title = action.todo?.title!;
+
+      return {
+        ...state,
+        todos: [...state.todos],
+      };
     default:
       return {
         ...state,

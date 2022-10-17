@@ -28,3 +28,20 @@ export const Icon = styled(FiTrash)`
     color: #ff5733;
   }
 `;
+
+type ButtonEditProps = {
+  isEnable: boolean;
+};
+
+export const ButtonEdit = styled.button<ButtonEditProps>`
+  border: 1px solid black;
+  padding: 14px;
+  border-radius: 6px;
+  background-color: ${({ isEnable }) => (isEnable ? '#808080' : '#3944bc')};
+  cursor: ${({ isEnable }) => (isEnable ? 'not-allowed' : 'pointer')};
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: white;
+  width: fit-content;
+  height: fit-content;
+`;

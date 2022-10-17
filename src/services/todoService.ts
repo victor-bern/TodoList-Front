@@ -22,4 +22,7 @@ const deleteTodo = async (id: number) => {
   await axios.delete(`api/v1/todos/delete/${id}`);
 };
 
-export { getAllTodos, saveTodo, changeStatustodo, deleteTodo };
+const editTodo = async (todo: ITodo) =>
+  await axios.put(`api/v1/todos/edit/${todo.id}`, todo);
+
+export { getAllTodos, saveTodo, changeStatustodo, deleteTodo, editTodo };

@@ -13,6 +13,4 @@ export const Button = styled.button<ButtonProps>`
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   color: white;
-  width: fit-content;
-  height: fit-content;
 `;

@@ -21,6 +21,9 @@ const cleanTodoInput = (dispatch: Dispatch<IAction>) =>
 const removeTodo = (dispatch: Dispatch<IAction>, todo: ITodo) =>
   dispatch({ type: ActionType.DELETE_TODO, todo });
 
+const editTodoTitle = (dispatch: Dispatch<IAction>, todo: ITodo) =>
+  dispatch({ type: ActionType.EDIT_TODO_TITLE, todo });
+
 export {
   setTodoTitle,
   addTodo,
@@ -28,4 +31,5 @@ export {
   fecthTodos,
   cleanTodoInput,
   removeTodo,
+  editTodoTitle,
 };
